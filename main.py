@@ -1,13 +1,59 @@
 def q1(cidades):
-    return []
+    resultado_esperado = []
+    for key,valor in cidades.items():
+        if(valor >= 100):
+            resultado_esperado.append(key)
+    return resultado_esperado
 
 def q2(lista1, lista2):
-    return []
+    lista = lista1 + lista2
+    soma = 0
+    new_lista=[]
+    for valor in lista:
+        if valor > 0 :
+            soma+=valor
+            new_lista.append(valor)
+    new_lista.sort()
+    return soma,new_lista
 
-def q3(valores):
-    return [],[]
+def q3():
 
-def q4(valores):
+    def ler_valores():
+        lista = []
+        while True:
+            valor = int(input(': '))
+            if valor == 0:
+                break
+            else:
+                lista.append(valor)
+        return lista    
+
+    def processa_lista(lista):
+        pares = []
+        impares = []
+        for valor in lista:
+            if valor % 2 == 0:
+                pares.append(valor)
+            else:
+                impares.append(valor) 
+        return pares,impares
+    
+    return processa_lista(ler_valores())
+
+def q4():
+    def ler_03_alturas():
+         lista = []
+         while True:
+            valor = int(input(': '))
+            if valor == 0:
+                break
+            else:
+                lista.append(valor)
+            return lista
+    def organizar_alturas(lista):
+        if lista[0] < lista[1] < lista[2]:
+            pass
+
     return []
 
 def main():
@@ -25,17 +71,19 @@ def main():
         "Areia": 177,
     }
     resultado = q1(idades)
+    print('-'*35)
     print("q1:", resultado)
-
-
+    print('-'*35)
     lista1 = [3, -5, 12, 0, -8, 7]
     lista2 = [-2, 10, -1, 6, -4, 9]
     resultado = q2(lista1, lista2)
     print("q2:", resultado)
-
+    print('-'*35)
+    print('q3: ',q3())
+    print('-'*35)
+    
 
 
 if __name__ == "__main__":
     main()
-
 
